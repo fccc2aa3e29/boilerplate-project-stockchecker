@@ -11,6 +11,9 @@ var runner            = require('./test-runner');
 
 var app = express();
 
+const helmet = require('helmet');
+//app.use(helmet.contentSecurityPolicy({directives: {defaultSrc: ["'self'"], styleSrc: ["'self'"]}}));
+
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.use(cors({origin: '*'})); //For FCC testing purposes only
